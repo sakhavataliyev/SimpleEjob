@@ -456,7 +456,7 @@ if (isset($_POST['menuduzenle'])) {
 
 
 if (isset($_GET['menusil'])) {
-if ($_GET['menusil']=="ok") {
+ if ($_GET['menusil']=="ok") {
 
 	$sil=$db->prepare("DELETE from menu where menu_id=:id");
 	$kontrol=$sil->execute(array(

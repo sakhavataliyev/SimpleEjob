@@ -1,4 +1,4 @@
 <?php 
 
-header("Location:https://ejob.fit.az");
+header("Location:https://ejob.test");
  ?>

@@ -1,10 +1,10 @@
 RewriteEngine on
 
 RewriteCond %{SERVER_PORT} 80 
-RewriteRule ^(.*)$ https://ejob.fit.az/$1 [R,L]
+RewriteRule ^(.*)$ https://ejob.test/$1 [R,L]
 
-RewriteCond %{HTTP_HOST} ^ejob.fit.az. [NC]
-RewriteRule ^(.*)$ https://ejob.fit.az/$1 [L,R=301,NC]
+RewriteCond %{HTTP_HOST} ^ejob.test. [NC]
+RewriteRule ^(.*)$ https://ejob.test/$1 [L,R=301,NC]
 
 
 #Seo url oluşturma
@@ -13,7 +13,7 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 
 #404 hata sayfası yönlendirme kodu
-ErrorDocument 404 https://ejob.fit.az
+ErrorDocument 404 https://ejob.test
 
 
 RewriteRule ^sayfa-([0-9a-zA-Z-_]+)  menu-detay.php?sef=$1 [L,QSA]
