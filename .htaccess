@@ -1,0 +1,27 @@
+RewriteEngine on
+
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://ejob.fit.az/$1 [R,L]
+
+RewriteCond %{HTTP_HOST} ^ejob.fit.az. [NC]
+RewriteRule ^(.*)$ https://ejob.fit.az/$1 [L,R=301,NC]
+
+
+#Seo url oluşturma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+#404 hata sayfası yönlendirme kodu
+ErrorDocument 404 https://ejob.fit.az
+
+
+RewriteRule ^sayfa-([0-9a-zA-Z-_]+)  menu-detay.php?sef=$1 [L,QSA]
+RewriteRule ^kategori-([0-9a-zA-Z-_]+)  kategoriler.php?sef=$1 [L,QSA]
+RewriteRule ^haber-([0-9a-zA-Z-_]+)-([0-9]+)$  haber-detay.php?sef=$1&haber_id=$2 [L,QSA]
+
+
+
+
+RewriteRule ^haber-([0-9a-zA-Z-_]+)-([0-9]+)$  haber-detay.php?sef=$1&icerik_id=$2 [L,QSA]
+RewriteRule ^sayfa-([0-9a-zA-Z-_]+)-([0-9]+)$  menu-detay.php?sef=$1&menu_id=$2 [L,QSA]
